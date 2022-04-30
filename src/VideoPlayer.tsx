@@ -273,8 +273,15 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
         <TouchableWithoutFeedback style={styles.player.container}>
             <View style={styles.player.container}>
                 <Video
+                    paused={isPaused}
+                    muted={false}
                     source={{
-                        uri: 'https://cdn81168665.blazingcdn.net/timeline/hartley-e001-s001a-01-2b6d4c/stream/index.m3u8'
+                        uri: 'https://hls-static.nyc3.digitaloceanspaces.com/music/order-99518.mp3'
+                    }}
+                />
+                <Video
+                    source={{
+                        uri: "https://hls-static.nyc3.digitaloceanspaces.com/index.m3u8" 
                     }}
                     ref={primaryRef}
                     resizeMode={'contain'}
